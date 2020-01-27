@@ -2,7 +2,7 @@
 html *
 {
   font-family: Palatino, 'Palatino Linotype', serif !important;
-  font-size: 1.5vw !important;
+  font-size: larger !important;
 }
 
 div {
@@ -12,7 +12,7 @@ div {
 }
 
 h1 {
-  font-size: 1vw;
+  font-size: larger;
 }
 
 body {
