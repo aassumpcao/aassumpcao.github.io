@@ -10,8 +10,6 @@ analytics:
   google:
     tracking_id :  "UA-131557431-1"
 
-source: .
-
 include:
   - files
   - style
