@@ -1,0 +1,49 @@
+/* define font for all parts of page */
+html *
+{
+  font-family: Palatino, 'Palatino Linotype', serif !important;
+  font-size: 1.5vw !important;
+}
+
+div {
+  /*width: 1000px;*/
+  word-wrap: break-word;
+  padding-bottom: 10px;
+}
+
+h1 {
+  font-size: 1vw;
+}
+
+body {
+   font-size: 1em !important;
+   color: #000 !important;
+}
+
+/* style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
