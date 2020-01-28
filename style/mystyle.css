@@ -2,7 +2,7 @@
 html *
 {
   font-family: Palatino, 'Palatino Linotype', serif !important;
-  font-size: larger !important;
+  font-size: medium !important;
 }
 
 div {
@@ -12,11 +12,11 @@ div {
 }
 
 h1 {
-  font-size: larger;
+  font-size: medium;
 }
 
 body {
-   font-size: 1em !important;
+   font-size: medium !important;
    color: #000 !important;
 }
 
