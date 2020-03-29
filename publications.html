@@ -15,12 +15,12 @@
   </script>
 
   <script>
-    function myFunction(id) {
-      var x = document.getElementById(id);
-      if (x.style.display === "none") {
-        x.style.display = "inline-block";
+    function openBox(position) {
+      var x = document.getElementsByClassName("details_box");
+      if (!x[position].style.display || x[position].style.display == "none") {
+        x[position].style.display = "inline-block";
       } else {
-        x.style.display = "none";
+        x[position].style.display = "none";
       }
     }
   </script>
@@ -42,13 +42,13 @@
 
     <div class="main">
 
-      <h2 id="working-papers">working papers</h2>
+      <h2 id="working-papers" style="margin-top: 10px">working papers </h2>
         <p>
+          <button onclick="openBox(0)">details</button> &nbsp;
           Electoral Crime Under Democracy: Information Effects from Judicial Decisions in Brazil (2019).
-          <button onclick="myFunction('details_electoralcrime')">details</button>
         </p>
 
-        <p id="details_electoralcrime" style="display: none; margin-left: 40px;">
+        <p class="details_box" id="details_electoralcrime">
           <b>
             abstract:
           </b>
@@ -62,10 +62,11 @@
         </p>
 
         <p>
+          <button onclick="openBox(1)">details</button> &nbsp;
           Judicial Favoritism of Politicians: Evidence from Small Claims Courts (2019).
-          <button onclick="myFunction('details_judicialbias')">details</button>
+        </p>
 
-        <p id="details_judicialbias" style="display: none; margin-left: 40px;">
+        <p class="details_box" id="details_judicialbias">
           <b>
             abstract:
           </b>
@@ -79,11 +80,11 @@
         </p>
 
         <p>
+          <button onclick="openBox(2)">details</button> &nbsp;
           Markets for Visas: A Radical and Fair Solution to Immigration (2019).
-          <button onclick="myFunction('details_immigration')">details</button>
         </p>
 
-        <p id="details_immigration" style="display: none; margin-left: 40px;">
+        <p class="details_box" id="details_immigration">
           <b>
             abstract:
           </b>
@@ -101,12 +102,11 @@
 
       <h2 id="in-preparation">in preparation</h2>
         <p>
+          <button onclick="openBox(3)">details</button> &nbsp;
           Active and Passive Transparency (2019).
-          <button onclick="myFunction('details_transparency')">details</button>
         </p>
 
-        <p id="details_transparency" style="display: none; margin-left: 40px;">
-
+        <p class="details_box" id="details_transparency">
           <b>
             abstract:
           </b>
@@ -120,11 +120,11 @@
         </p>
 
         <p>
+          <button onclick="openBox(4)">details</button> &nbsp;
           Estimating the Effect of Discretion in Public Spending on Government Performance: Evidence from Brazilian Municipalities (2018).
-          <button onclick="myFunction('details_discretionperformance')">details</button>
         </p>
 
-        <p id="details_discretionperformance" style="display: none; margin-left: 40px;">
+        <p class="details_box" id="details_discretionperformance">
 
           <b>
             abstract:
@@ -140,8 +140,8 @@
 
       <h2 id="peer-reviewed">peer-reviewed</h2>
       <p>
+        <button onclick="window.open('http://www.scielo.br/scielo.php?pid=S0104-530X2014000100007&amp;script=sci_abstract&amp;tlng=pt', '_blank')">link</button> &nbsp;
         Berssaneti, F., <strong>Assumpcao, A.</strong>, and Nakao, O. (in Portuguese) Engenharia e Construção: Quais Variáveis Contribuem para o Sucesso dos Projetos Executados atualmente no Brasil? Gestão e Produção, vol. 21(1), 2014.
-        <a href="http://www.scielo.br/scielo.php?pid=S0104-530X2014000100007&amp;script=sci_abstract&amp;tlng=pt" title="project management" target="_blank">scielo</a>
       </p>
     </div>
   </body>

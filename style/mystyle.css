@@ -1,6 +1,7 @@
 /* define font for all parts of page */
 html *
 {
+  /*font-family: Helvetica Neue, Helvetica,Arial, sans-serif;*/
   font-family: Palatino, 'Palatino Linotype', serif !important;
   font-size: medium !important;
 }
@@ -13,6 +14,10 @@ div {
 
 h1 {
   font-size: medium;
+}
+
+h2 {
+  margin-top: 30px;
 }
 
 body {
@@ -46,4 +51,23 @@ body {
 /* hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
+}
+
+/* define button style */
+button {
+  background-color: #000;
+  border-color: #000;
+  border-radius: 25px;
+  color: white;
+  text-align: center;
+}
+
+/* define details box style */
+p[class=details_box] {
+  display: none;
+  margin-left: 40px;
+}
+
+p {
+  line-height: 1.5;
 }
