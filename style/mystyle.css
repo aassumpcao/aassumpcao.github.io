@@ -60,6 +60,7 @@ button {
   border-radius: 25px;
   color: white;
   text-align: center;
+  vertical-align: middle;
 }
 
 /* define details box style */
