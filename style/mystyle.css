@@ -63,7 +63,7 @@ button {
 }
 
 /* define details box style */
-p[class=details_box] {
+.details_box {
   display: none;
   margin-left: 40px;
 }
