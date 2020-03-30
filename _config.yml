@@ -8,7 +8,9 @@ staticman:
 analytics:
   provider      :  "google-gtag"
   google:
-    tracking_id :  "UA-131557431-1"
+    tracking_id :
+      - "UA-131557431-1"
+      - "GTM-NBS8V8V"
 
 include:
   - files
