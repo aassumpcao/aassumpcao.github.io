@@ -1,0 +1,11 @@
+type: python
+title: tse
+abstract: module creating the web scraper and parser for TSE candidacy decisions for all candidates running for municipal office between 2004 and 2016 in Brazil (built for dissertation chapter 1).
+year: 2019
+link: https://github.com/abjur/uncabj/blob/master/tse.py
+
+type: stata
+title: textfind
+abstract: text classification algorithm based on user-defined criteria.
+year: 2018.
+link: https://ideas.repec.org/c/boc/bocode/s458633.html

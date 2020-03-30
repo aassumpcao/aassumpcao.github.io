@@ -1,0 +1,53 @@
+[
+  {
+    "type": "working-papers",
+    "title": "Electoral Crime Under Democracy: Information Effects from Judicial Decisions in Brazil",
+    "abstract": "Most electoral crime studies have two main features: they investigate (1) severe, coercive threats to elections which occur in (2) weak democracies and autocracies. Using Brazil as a case study, I address these limitations and produce the first analysis of the impact of severe and trivial electoral crimes on voter behavior in a large democracy. The results show that voters respond to criminal information disclosed by the judiciary and punish candidates more harshly when their crimes are more severe. These results are not explained by (potential) changes in judge, voter, or candidate behavior over the electoral process. I suggest the mechanism explaining voter punishment is their trust in the judiciary system – a credible source of information unexplored by the information shortcut literature.",
+    "year": "2019",
+    "link": "https://arxiv.org/abs/1912.10958"
+  },
+  {
+    "type": "working-papers",
+    "title": "Judicial Favoritism of Politicians: Evidence from Small Claims Courts (<i>with Julio Trecenti</i>)",
+    "abstract": "Multiple studies have documented racial, gender, political ideology, or ethnical biases in comparative judicial systems. Supplementing this literature, we investigate whether judges rule cases differently when one of the litigants is a politician. We suggest a theory of power collusion, according to which judges might use rulings to buy cooperation or threaten members of the other branches of government. We test this theory using a sample of small claims cases in the state of São Paulo, Brazil, where no collusion should exist. The results show a negative bias of 3.7 percentage points against litigant politicians, indicating that judges punish, rather than favor, politicians in court. This punishment in low-salience cases serves as a warning sign for politicians not to cross the judiciary when exercising checks and balances, suggesting yet another barrier to judicial independence in development settings.",
+    "year": "2019",
+    "link": "https://arxiv.org/abs/2001.00889"
+  },
+  {
+    "type": "working-papers",
+    "title": "Markets for Visas: A Radical and Fair Solution to Immigration",
+    "abstract": "In this paper, I propose the creation of visa markets and claim they are a radical and fair approach to immigration policy. Immigration markets are not new and have been previously suggested, with minor differences, by Gary Becker, Julian Simon, and Javier Hidalgo. Nevertheless, I contribute two new utilitarian arguments in their favor: (i) visa markets create compensation mechanisms for negatively affected communities and (ii) they increase social welfare for both sending and receiving communities; these claims are fundamental in bringing together the empirical and the normative claims for immigration markets. Lastly, I show that such exchanges are consistent with both open and closed borders approaches to immigration such that any government would benefit from their adoption regardless of whether it subscribes to the right to migrate or not.",
+    "year": "2019",
+    "link": "https://github.com/aassumpcao/transparency"
+  },
+  {
+    "type": "in-preparation",
+    "title": "Active and Passive Transparency (<i>with Brigitte Seim</i>)",
+    "abstract": "(to be updated)",
+    "year": "2019",
+    "link": "https://github.com/aassumpcao/transparency"
+  },
+  {
+    "type": "in-preparation",
+    "title": "Estimating the Effect of Discretion in Public Spending on Government Performance: Evidence from Brazilian Municipalities (<i>with Ciro Biderman and George Avelino</i>)",
+    "abstract": "(to be updated)",
+    "year": "2019",
+    "link": "https://github.com/aassumpcao/discretionperformance"
+  },
+  {
+    "type": "peer-reviewed",
+    "authors": ["Fernando Berssaneti", "Andre Assumpcao", "Osvaldo Nakao"],
+    "title": "(in Portuguese) Engenharia e Construção: Quais Variáveis Contribuem para o Sucesso dos Projetos Executados atualmente no Brasil?",
+    "journal": "Gestão e Produção",
+    "vol": "21(1)",
+    "year": "2014",
+    "link": "http://www.scielo.br/scielo.php?pid=S0104-530X2014000100007&amp;script=sci_abstract&amp;tlng=pt"
+  },
+  {
+    "type": "in-preparation",
+    "title": "Human Rights Exchange (<i>preliminary title, with Chris Freiman</i>)",
+    "abstract": "(to be updated)",
+    "year": "2020",
+    "link": "https://aassumpcao.github.io"
+  }
+]
