@@ -239,51 +239,50 @@ def save_software():
 
 # define function to insert content into main div
 def save_data():
-    pass
 
-# initialize template
-soup = initialize_template()
-make_active('data', soup)
+    # initialize template
+    soup = initialize_template()
+    make_active('data', soup)
 
-# search programs
-with open('pagetext/data.json', 'r') as file:
-    data = json.load(file)
+    # search programs
+    with open('pagetext/data.json', 'r') as file:
+        data = json.load(file)
 
-# create list with program languages
-types = [dataset['type'] for dataset in data]
-headings = {}
-headings = {dataset for dataset in types if dataset not in headings}
+    # create list with program languages
+    types = [dataset['type'] for dataset in data]
+    headings = {}
+    headings = {dataset for dataset in types if dataset not in headings}
 
-# create list of html tags which will be inserted into main div
-tags, paras = [], []
+    # create list of html tags which will be inserted into main div
+    tags, paras = [], []
 
-# create h2 tags
-for head in headings:
-    tag = soup.new_tag(name='h2', id=head, style='margin-top:10px')
-    tag.string = head
-    tags += [tag]
+    # create h2 tags
+    for head in headings:
+        tag = soup.new_tag(name='h2', id=head, style='margin-top:10px')
+        tag.string = head
+        tags += [tag]
 
-# construct p, u, and button tags
-for dataset in data:
-    para = soup.new_tag(name='p', id=dataset['type'])
-    button = soup.new_tag(
-        name='button',
-        onclick=f'window.open("{dataset["link"]}", "_blank")'
-    )
-    button.string = 'link'
-    para.string = '&nbsp;' + f'{dataset["title"]}'
-    para.insert(0, button)
-    paras += [para]
+    # construct p, u, and button tags
+    for dataset in data:
+        para = soup.new_tag(name='p', id=dataset['type'])
+        button = soup.new_tag(
+            name='button',
+            onclick=f'window.open("{dataset["link"]}", "_blank")'
+        )
+        button.string = 'link'
+        para.string = '&nbsp;' + f'{dataset["title"]}'
+        para.insert(0, button)
+        paras += [para]
 
-# insert tags into main div
-for tag in tags:
-    soup.find('div', {'class': 'main'}).append(tag)
-    for para in paras:
-        if re.search(tag['id'], para['id']):
-            soup.find('div', {'class': 'main'}).append(para)
+    # insert tags into main div
+    for tag in tags:
+        soup.find('div', {'class': 'main'}).append(tag)
+        for para in paras:
+            if re.search(tag['id'], para['id']):
+                soup.find('div', {'class': 'main'}).append(para)
 
-# save to file
-save_html('data', soup.prettify(formatter=None))
+    # save to file
+    save_html('data', soup.prettify(formatter=None))
 
 # execute if main
 def main():
