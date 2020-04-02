@@ -202,7 +202,7 @@ def save_software():
 
     # create list with program languages
     types = [program['type'] for program in software]
-    types = sorted(types, key=lambda entry: int(entry['year']), reverse=True)
+    software = sorted(software, key=lambda entry: entry['year'], reverse=True)
     headings = {}
     headings = {program for program in types if program not in headings}
 
