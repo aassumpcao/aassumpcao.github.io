@@ -15,6 +15,7 @@ analytics:
 include:
   - files
   - style
+  - pagetext
 
 defaults:
   -
