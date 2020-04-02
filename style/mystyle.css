@@ -65,6 +65,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /* define details box style */
 .details_box {
   display: none;
