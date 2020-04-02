@@ -9,6 +9,7 @@ html *
 div {
   /*width: 1000px;*/
   word-wrap: break-word;
+  /*display: table-cell;*/
   padding-bottom: 10px;
 }
 

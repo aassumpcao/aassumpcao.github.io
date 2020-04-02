@@ -1,7 +1,0 @@
-type: transparency
-title: CGU audits requested by police investigation.
-link: https://github.com/aassumpcao/research-data/blob/master/LAI%2000075.001622-2018-19.xlsx
-
-type: transparency
-title: CGU random audits between 2006 and 2015.
-link: https://github.com/aassumpcao/research-data/blob/master/RESPOSTA_PEDIDO_Planilha%20de%20resposta_00075.000087-2018-89.xlsx

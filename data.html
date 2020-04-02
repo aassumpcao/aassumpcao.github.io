@@ -1,69 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NBS8V8V');
-    </script>
-    <!-- End Google Tag Manager -->
-    <link rel="stylesheet" type="text/css" href="style/mystyle.css">
-      <title>aassumpcao's website</title>
-  </head>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131557431-1"></script>
+ <head>
+  <!-- Google Tag Manager -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-131557431-1');
+   (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-NBS8V8V');
   </script>
-
-
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBS8V8V"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!-- top navigation menu -->
-    <div class="topnav" id="myTopnav">
-      <a href="/">.home</a>
-      <a href="cv.html">.cv</a>
-      <a href="publications.html" >.publications</a>
-      <a href="software.html">.software</a>
-      <a href="data.html" class="active">.data</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-
-    <br> <br> <hr>
-
-    <div class="main">
-
-      <h2 id="working-papers" style="margin-top: 10px">transparency</h2>
-
-      <p>
-        <button onclick="window.open('https://github.com/aassumpcao/research-data/blob/master/LAI%2000075.001622-2018-19.xlsx', '_blank')">link</button> &nbsp;
-        CGU audits requested by police investigation.
-      </p>
-
-      <p>
-        <button onclick="window.open('https://github.com/aassumpcao/research-data/blob/master/RESPOSTA_PEDIDO_Planilha%20de%20resposta_00075.000087-2018-89.xlsx', '_blank')">link</button> &nbsp;
-        CGU random audits between 2006 and 2015.
-      </p>
-
-      <p>
-        <button onclick="window.open('https://github.com/aassumpcao/research-data/blob/master/EBT.xlsx', '_blank')">link</button> &nbsp;
-        CGU data on the Transparent Brazil Program.
-      </p>
-
-      </p>
-    </div>
-  </body>
+  <!-- End Google Tag Manager -->
+  <link href="style/mystyle.css" rel="stylesheet" type="text/css"/>
+  <title>
+   aassumpcao's website
+  </title>
+ </head>
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+ <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-131557431-1">
+ </script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131557431-1');
+ </script>
+ <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NBS8V8V" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- top navigation menu -->
+  <div class="topnav" id="myTopnav">
+   <a href="/">
+    .home
+   </a>
+   <a href="cv.html">
+    .cv
+   </a>
+   <a href="publications.html">
+    .publications
+   </a>
+   <a href="software.html">
+    .software
+   </a>
+   <a class="active" href="data.html">
+    .data
+   </a>
+   <a class="icon" href="javascript:void(0);" onclick="myFunction()">
+    <i class="fa fa-bars">
+    </i>
+   </a>
+  </div>
+  <br/>
+  <br/>
+  <hr/>
+  <div class="main">
+   <h2 id="transparency" style="margin-top:10px">
+    transparency
+   </h2>
+   <p id="transparency">
+    <button onclick='window.open("https://github.com/aassumpcao/research-data/blob/master/LAI%2000075.001622-2018-19.xlsx", "_blank")'>
+     link
+    </button>
+    &nbsp;CGU audits requested by police investigation.
+   </p>
+   <p id="transparency">
+    <button onclick='window.open("https://github.com/aassumpcao/research-data/blob/master/RESPOSTA_PEDIDO_Planilha%20de%20resposta_00075.000087-2018-89.xlsx", "_blank")'>
+     link
+    </button>
+    &nbsp;CGU random audits between 2006 and 2015.
+   </p>
+   <p id="transparency">
+    <button onclick='window.open("https://github.com/aassumpcao/research-data/blob/master/EBT.xlsx", "_blank")'>
+     link
+    </button>
+    &nbsp;CGU data on the Transparent Brazil Program.
+   </p>
+  </div>
+ </body>
 </html>

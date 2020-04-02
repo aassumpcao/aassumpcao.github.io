@@ -70,6 +70,7 @@ def save_cv():
     soup.find('div', {'class': 'main'}).insert(0, iframe)
     save_html('cv', soup)
 
+# define function to insert content into main div
 def save_publications():
 
     # define function to insert content into main div
@@ -146,10 +147,8 @@ def save_publications():
         item = BeautifulSoup(unescape(item), 'lxml')
         for x, paragraph in enumerate(item.find_all('p')):
             if i < len(wp):
-                # h2[0].insert(i, paragraph)
                 wp_html += [paragraph]
             else:
-                # h2[1].insert(i, paragraph)
                 prep_html += [paragraph]
 
     # define function to create published item
@@ -190,13 +189,111 @@ def save_publications():
     # save to file
     save_html('publications', soup)
 
+# define function to insert content into main div
+def save_software():
+
+    # initialize template
+    soup = initialize_template()
+    make_active('software', soup)
+
+    # search programs
+    with open('pagetext/software.json', 'r') as file:
+        software = json.load(file)
+
+    # create list with program languages
+    types = [program['type'] for program in software]
+    types = sorted(types, key=lambda entry: entry['year'])
+    headings = {}
+    headings = {program for program in types if program not in headings}
+
+    # create list of html tags which will be inserted into main div
+    tags, paras = [], []
+
+    # create h2 tags
+    for head in headings:
+        tag = soup.new_tag(name='h2', id=head, style='margin-top:10px')
+        tag.string = head
+        tags += [tag]
+
+    # construct p, u, and button tags
+    for program in software:
+        para = soup.new_tag(name='p', id=program['type'])
+        button = soup.new_tag(
+            name='button',
+            onclick=f'window.open("{program["link"]}", "_blank")'
+        )
+        button.string = f'{program["title"]} ({program["year"]}):'
+        para.string = '&nbsp;' + program['summary']
+        para.insert(0, button)
+        paras += [para]
+
+    # insert tags into main div
+    for tag in tags:
+        soup.find('div', {'class': 'main'}).append(tag)
+        for para in paras:
+            if re.search(tag['id'], para['id']):
+                soup.find('div', {'class': 'main'}).append(para)
+
+    # save to file
+    save_html('software', soup.prettify(formatter=None))
+
+# define function to insert content into main div
+def save_data():
+    pass
+
+# initialize template
+soup = initialize_template()
+make_active('data', soup)
+
+# search programs
+with open('pagetext/data.json', 'r') as file:
+    data = json.load(file)
+
+# create list with program languages
+types = [dataset['type'] for dataset in data]
+headings = {}
+headings = {dataset for dataset in types if dataset not in headings}
+
+# create list of html tags which will be inserted into main div
+tags, paras = [], []
+
+# create h2 tags
+for head in headings:
+    tag = soup.new_tag(name='h2', id=head, style='margin-top:10px')
+    tag.string = head
+    tags += [tag]
+
+# construct p, u, and button tags
+for dataset in data:
+    para = soup.new_tag(name='p', id=dataset['type'])
+    button = soup.new_tag(
+        name='button',
+        onclick=f'window.open("{dataset["link"]}", "_blank")'
+    )
+    button.string = 'link'
+    para.string = '&nbsp;' + f'{dataset["title"]}'
+    para.insert(0, button)
+    paras += [para]
+
+# insert tags into main div
+for tag in tags:
+    soup.find('div', {'class': 'main'}).append(tag)
+    for para in paras:
+        if re.search(tag['id'], para['id']):
+            soup.find('div', {'class': 'main'}).append(para)
+
+# save to file
+save_html('data', soup.prettify(formatter=None))
+
 # execute if main
 def main():
 
-    # execute each function for each page
+    # execute function for each page
     save_home()
     save_cv()
     save_publications()
+    save_software()
+    save_data()
 
 # execution block
 if __name__ == '__main__':
