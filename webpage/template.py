@@ -53,9 +53,7 @@ template = f'''
     </a>
     </div>
 
-    <br> <br> <hr>
-
-    <div class='main'>
+    <div class='main'><hr>
 
     </div>
   </body>

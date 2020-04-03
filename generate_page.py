@@ -37,12 +37,12 @@ def save_home():
     # create tags and fill them with text
     h2 = soup.new_tag(name='h2', id='about', style='margin-top: 10px')
     h2.string = 'about'
-    soup.find('div', {'class': 'main'}).insert(0, h2)
+    soup.find('div', {'class': 'main'}).append(h2)
     p = soup.new_tag(name='p')
-    for i, para in enumerate(paragraphs):
+    for para in paragraphs:
         p = soup.new_tag(name='p')
         p.string = para
-        soup.find('div', {'class': 'main'}).insert(i+1, p)
+        soup.find('div', {'class': 'main'}).append(p)
 
     # find last position and insert image
     position = len(soup.find('div', {'class': 'main'}))
@@ -50,7 +50,7 @@ def save_home():
         name='img', src='files/logo.png', align='left',
         style='max-width:100%;height:auto;'
     )
-    soup.find('div', {'class': 'main'}).insert(7, img)
+    soup.find('div', {'class': 'main'}).append(img)
 
     # save page
     save_html('index', soup)
@@ -64,11 +64,12 @@ def save_cv():
 
     # create iframe for cv
     iframe = soup.new_tag(
-        name='iframe', src='files/cv.pdf', style='max-width:100%;height:auto;'
+        name='iframe', src='files/cv.pdf',
+        style='width:100%;height:800px;margin-top:10px'
     )
 
     # insert and save
-    soup.find('div', {'class': 'main'}).insert(0, iframe)
+    soup.find('div', {'class': 'main'}).insert_after(iframe)
     save_html('cv', soup)
 
 # define function to insert content into main div
@@ -203,9 +204,9 @@ def save_software():
 
     # create list with program languages
     types = [program['type'] for program in software]
-    software = sorted(software, key=lambda entry: entry['year'], reverse=True)
     headings = {}
     headings = {program for program in types if program not in headings}
+    headings = sorted(headings, reverse=True)
 
     # create list of html tags which will be inserted into main div
     tags, paras = [], []

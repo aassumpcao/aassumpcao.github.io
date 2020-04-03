@@ -3,22 +3,34 @@ html *
 {
   /*font-family: Helvetica Neue, Helvetica,Arial, sans-serif;*/
   font-family: Palatino, 'Palatino Linotype', serif !important;
-  font-size: 1.5vw !important;
+  font-size: 18px !important;
 }
-
+/*@media screen and (max-width: 500px, max-height: 300px;) {
+  html * {
+    font-size: 3vw !important;
+  }
+}
+*//*@media screen and (max-width: 1000px) and (min-width: 501px) {
+  html * {
+    font-size: 2.5vw !important;
+  }
+}
+*/
 div {
   /*width: 1000px;*/
+  float: left;
+  width:100%;
   word-wrap: break-word;
   /*display: table-cell;*/
-  padding-bottom: 10px;
+  /*padding-bottom: 0px;*/
 }
 
-h1 {
+/*h1 {
   font-size: 1.5vw;
-}
+}*/
 
 h2 {
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 body {
@@ -32,6 +44,7 @@ body {
   display: block;
   color: #000;
   text-align: center;
+  min-height: 10px;
   padding: 14px 16px;
   text-decoration: none;
 }
@@ -69,7 +82,7 @@ button:hover {
 }
 
 /* define details box style */
-.details_box {
+.details {
   display: none;
   margin-left: 40px;
 }
