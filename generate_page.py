@@ -47,7 +47,8 @@ def save_home():
     # find last position and insert image
     position = len(soup.find('div', {'class': 'main'}))
     img = soup.new_tag(
-        name='img', src='files/logo.png', align='left', width='25%'
+        name='img', src='files/logo.png', align='left',
+        style='max-width:100%;height:auto;'
     )
     soup.find('div', {'class': 'main'}).insert(7, img)
 
@@ -63,7 +64,7 @@ def save_cv():
 
     # create iframe for cv
     iframe = soup.new_tag(
-        name='iframe', src='files/cv.pdf', width='100%', height='800px'
+        name='iframe', src='files/cv.pdf', style='max-width:100%;height:auto;'
     )
 
     # insert and save

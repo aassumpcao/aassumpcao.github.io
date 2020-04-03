@@ -3,7 +3,7 @@ html *
 {
   /*font-family: Helvetica Neue, Helvetica,Arial, sans-serif;*/
   font-family: Palatino, 'Palatino Linotype', serif !important;
-  font-size: 1.5vw !important;
+  font-size: medium !important;
 }
 
 div {
@@ -14,15 +14,15 @@ div {
 }
 
 h1 {
-  font-size: 1.5vw;
+  font-size: medium;
 }
 
 h2 {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 body {
-   font-size: 1.5vw !important;
+   font-size: medium !important;
    color: #000 !important;
 }
 
@@ -34,6 +34,7 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-size: 17px;
 }
 
 /* change the color of links on hover */
