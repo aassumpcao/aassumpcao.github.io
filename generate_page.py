@@ -206,7 +206,7 @@ def save_software():
     types = [program['type'] for program in software]
     headings = {}
     headings = {program for program in types if program not in headings}
-    headings = sorted(headings, reverse=True)
+    headings = sorted(headings, key=lambda entry:max(entry), reverse=True)
 
     # create list of html tags which will be inserted into main div
     tags, paras = [], []
