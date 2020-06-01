@@ -48,7 +48,7 @@ def save_home():
     position = len(soup.find('div', {'class': 'main'}))
     img = soup.new_tag(
         name='img', src='files/logo.png', align='left',
-        style='max-width:50%;height:auto;'
+        style='max-width:30%;max-height:100%;'
     )
     soup.find('div', {'class': 'main'}).append(img)
 
