@@ -44,7 +44,7 @@ template = f'''
     <!-- top navigation menu -->
     <div class='topnav' id='myTopnav'>
     <a href='/'>.home</a>
-    <a href='cv.html'>.cv</a>
+    <a href='resume.html'>.resume</a>
     <a href='publications.html'>.publications</a>
     <a href='software.html'>.software</a>
     <a href='data.html'>.data</a>
