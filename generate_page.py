@@ -60,17 +60,17 @@ def save_cv():
 
     # call first methods
     soup = initialize_template()
-    make_active('cv', soup)
+    make_active('resume', soup)
 
     # create iframe for cv
     iframe = soup.new_tag(
-        name='iframe', src='files/cv.pdf',
+        name='iframe', src='files/resume.pdf',
         style='width:100%;height:800px;margin-top:10px'
     )
 
     # insert and save
     soup.find('div', {'class': 'main'}).insert_after(iframe)
-    save_html('cv', soup)
+    save_html('resume', soup)
 
 # define function to insert content into main div
 def save_publications():
