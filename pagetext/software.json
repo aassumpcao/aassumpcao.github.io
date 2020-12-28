@@ -26,5 +26,12 @@
         "summary": "easily create Calendar events from Outlook and Mail on iOS.",
         "year": "2018",
         "link": "https://github.com/aassumpcao/emailToEvent"
+    },
+    {
+        "type": "python",
+        "title": "keywordextraction",
+        "summary": "module to perform keyword extraction from any text document using TF-IDF, WordRank, and Word Embedding methods.",
+        "year": "2020",
+        "link": "https://github.com/aassumpcao/keywordextraction"
     }
 ]
