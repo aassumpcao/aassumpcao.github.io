@@ -46,11 +46,28 @@ def save_home():
 
     # find last position and insert image
     position = len(soup.find('div', {'class': 'main'}))
-    img = soup.new_tag(
-        name='img', src='files/logo.png', align='left',
-        style='max-width:30%;max-height:100%;'
-    )
-    soup.find('div', {'class': 'main'}).append(img)
+
+    #build table
+    table = '''
+        <table style="width:100%">
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    '''
+
+    # extract tag and append images
+    table = BeautifulSoup(table, 'lxml').table
+    for i, td in enumerate(table.find_all('td')):
+        img = soup.new_tag(
+            name='img', src=f'files/logo0{i+1}.png', align='left',
+            style='max-width:30%;max-height:100%;'
+        )
+        td.append(img)
+
+
+    soup.find('div', {'class': 'main'}).append(table)
 
     # save page
     save_html('index', soup)
