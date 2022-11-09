@@ -21,20 +21,6 @@
     "link": "https://github.com/aassumpcao/transparency"
   },
   {
-    "type": "in-preparation",
-    "title": "Active and Passive Transparency (<i>with Brigitte Seim</i>)",
-    "abstract": "(to be updated)",
-    "year": "2019",
-    "link": "https://github.com/aassumpcao/transparency"
-  },
-  {
-    "type": "in-preparation",
-    "title": "Estimating the Effect of Discretion in Public Spending on Government Performance: Evidence from Brazilian Municipalities (<i>with Ciro Biderman and George Avelino</i>)",
-    "abstract": "(to be updated)",
-    "year": "2019",
-    "link": "https://github.com/aassumpcao/discretionperformance"
-  },
-  {
     "type": "peer-reviewed",
     "authors": ["Fernando Berssaneti", "Andre Assumpcao", "Osvaldo Nakao"],
     "title": "(in Portuguese) Engenharia e Construção: Quais Variáveis Contribuem para o Sucesso dos Projetos Executados atualmente no Brasil?",
@@ -42,19 +28,5 @@
     "vol": "21(1)",
     "year": "2014",
     "link": "http://www.scielo.br/scielo.php?pid=S0104-530X2014000100007&amp;script=sci_abstract&amp;tlng=pt"
-  },
-  {
-    "type": "in-preparation",
-    "title": "Human Rights Exchange (<i>preliminary title, with Chris Freiman</i>)",
-    "abstract": "(to be updated)",
-    "year": "2020",
-    "link": "https://aassumpcao.github.io"
-  },
-  {
-    "type": "in-preparation",
-    "title": "Lessons from 80 years of change in occupational tasks in the U.S. (1939-2018) (<i>with Ljubica Nedelkoska, Shreyas Matha, Dario Diodato, James McNerney, and Frank Neffke</i>)",
-    "abstract": "(to be updated)",
-    "year": "2020",
-    "link": "https://aassumpcao.github.io"
   }
 ]
