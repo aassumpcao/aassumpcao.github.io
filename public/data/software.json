@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "querido-diario-toolbox",
+    "description": "Python module to perform text extraction, processing, and analysis of local government gazettes in Brazil. Built for improving government transparency through automated document processing.",
+    "language": "Python",
+    "github": "https://github.com/okfn-brasil/querido-diario-toolbox",
+    "status": "Active",
+    "date": "2023-01-01",
+    "downloads": "1.2K",
+    "stars": "67"
+  },
+  {
+    "id": 2,
+    "name": "keywordextraction",
+    "description": "Python module to perform keyword extraction from any text document using TF-IDF, WordRank, and Word Embedding methods. Designed for automated document analysis and summarization.",
+    "language": "Python",
+    "github": "https://github.com/aassumpcao/keywordextraction",
+    "status": "Active",
+    "date": "2021-01-01",
+    "downloads": "980",
+    "stars": "43"
+  },
+  {
+    "id": 3,
+    "name": "textfind",
+    "description": "Stata command to do descriptive analysis of keywords in text documents. Enables researchers to perform comprehensive text analysis within the Stata environment.",
+    "language": "Stata",
+    "github": "https://github.com/aassumpcao/textfind",
+    "status": "Maintenance",
+    "date": "2020-01-01",
+    "downloads": "560",
+    "stars": "28"
+  },
+  {
+    "id": 4,
+    "name": "emailToEvent",
+    "description": "AppleScript program to create iCal events from Outlook and Mail in macOS devices. Streamlines calendar management by automatically converting emails to calendar events.",
+    "language": "AppleScript",
+    "github": "https://github.com/aassumpcao/emailToEvent",
+    "status": "Maintenance",
+    "date": "2019-01-01",
+    "downloads": "340",
+    "stars": "15"
+  }
+]
