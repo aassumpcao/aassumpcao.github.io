@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "name": "CGU Audits Requested by Police Investigation",
+    "description": "CGU audits requested by police investigation. Contains audit data and findings from investigations conducted by Brazil's Office of the Comptroller General.",
+    "size": "850 KB",
+    "format": "Excel (XLSX)",
+    "observations": "2,500",
+    "variables": "25",
+    "lastUpdated": "2018-11-01",
+    "downloadLink": "https://github.com/aassumpcao/research-data/blob/master/LAI%2000075.001622-2018-19.xlsx",
+    "documentation": "https://github.com/aassumpcao/research-data",
+    "type": "Transparency Data"
+  },
+  {
+    "id": 2,
+    "name": "CGU Random Audits 2006-2015",
+    "description": "CGU random audits between 2006 and 2015. Comprehensive dataset of random municipal audits conducted by Brazil's Office of the Comptroller General over a 10-year period.",
+    "size": "1.2 MB",
+    "format": "Excel (XLSX)",
+    "observations": "3,800",
+    "variables": "42",
+    "lastUpdated": "2018-11-01",
+    "downloadLink": "https://github.com/aassumpcao/research-data/blob/master/RESPOSTA_PEDIDO_Planilha%20de%20resposta_00075.000087-2018-89.xlsx",
+    "documentation": "https://github.com/aassumpcao/research-data",
+    "type": "Transparency Data"
+  },
+  {
+    "id": 3,
+    "name": "Transparent Brazil Program Data",
+    "description": "CGU data on the Transparent Brazil Program. Dataset contains information about Brazil's transparency initiatives and related governmental programs administered by the CGU.",
+    "size": "650 KB",
+    "format": "Excel (XLSX)",
+    "observations": "1,900",
+    "variables": "18",
+    "lastUpdated": "2018-11-01",
+    "downloadLink": "https://github.com/aassumpcao/research-data/blob/master/EBT.xlsx",
+    "documentation": "https://github.com/aassumpcao/research-data",
+    "type": "Transparency Data"
+  }
+]

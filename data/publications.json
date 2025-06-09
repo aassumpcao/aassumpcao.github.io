@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "INACIA: Integrating Large Language Models in Brazilian Audit Courts: Opportunities and Challenges",
+    "authors": "Jayr Pereira, Andre Assumpcao, Julio Trecenti, Luiz Airosa, Caio Lente, Jhonatan Cléto, Guilherme Dobins, Rodrigo Nogueira, Luis Mitchell, and Roberto Lotufo",
+    "year": "2024",
+    "date": "2024-03-01",
+    "journal": "Digital Government: Research and Practice",
+    "abstract": "This paper explores the integration of large language models in Brazilian audit courts, examining opportunities and challenges for improving governmental transparency and efficiency through AI technologies.",
+    "doi": "10.1145/3652951",
+    "link": "https://doi.org/10.1145/3652951",
+    "type": "Journal Article"
+  },
+  {
+    "id": 2,
+    "title": "A Journey through Time: the Story Behind 'Eight Decades of Changes in Occupational Tasks, Computerization and the Gender Pay Gap'",
+    "authors": "Leo Schmallenbach, Ljubica Nedelkoska, Shreyas Gadgin Matha, James McNerney, Andre Assumpcao, Dario Diodato, and Frank Neffke",
+    "year": "2024",
+    "date": "2024-04-01",
+    "journal": "Industry and Innovation",
+    "abstract": "An analysis of occupational task changes over eight decades and their implications for computerization and the gender pay gap, providing insights into labor market evolution.",
+    "doi": "10.1080/13662716.2024.2328005",
+    "link": "https://doi.org/10.1080/13662716.2024.2328005",
+    "type": "Journal Article"
+  },
+  {
+    "id": 3,
+    "title": "Electoral Crime Under Democracy: Information Effects from Judicial Decisions in Brazil",
+    "authors": "Andre Assumpcao",
+    "year": "2019",
+    "date": "2019-12-01",
+    "journal": "arXiv preprint",
+    "abstract": "This paper examines the information effects of judicial decisions on electoral crime under democratic governance in Brazil, analyzing how court rulings influence electoral behavior and democratic accountability.",
+    "doi": "arXiv:1912.10958",
+    "link": "https://arxiv.org/abs/1912.10958",
+    "type": "Working Paper"
+  },
+  {
+    "id": 4,
+    "title": "Judicial Favoritism of Politicians: Evidence from Small Claims Courts",
+    "authors": "Andre Assumpcao, Julio Trecenti",
+    "year": "2019",
+    "date": "2019-12-01",
+    "journal": "arXiv preprint",
+    "abstract": "This paper investigates evidence of judicial favoritism toward politicians in small claims courts, examining potential bias in judicial decision-making and its implications for democratic governance and rule of law.",
+    "doi": "arXiv:2001.00889",
+    "link": "https://arxiv.org/abs/2001.00889",
+    "type": "Working Paper"
+  },
+  {
+    "id": 5,
+    "title": "Engineering, Procurement, and Construction (EPC): What are the Variables that Impact the Success of the Projects Currently running in Brazil?",
+    "authors": "Fernando Berssaneti, Andre Assumpcao, Oswaldo Nakao",
+    "year": "2014",
+    "date": "2014-03-01",
+    "journal": "Gestão & Produção",
+    "abstract": "This study examines the key variables that impact the success of Engineering, Procurement, and Construction projects in Brazil, providing insights for project management optimization.",
+    "doi": "10.1590/S0104-530X2014005000009",
+    "link": "https://doi.org/10.1590/S0104-530X2014005000009",
+    "type": "Journal Article"
+  }
+]
