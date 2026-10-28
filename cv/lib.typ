@@ -77,6 +77,12 @@
 }
 #let only(items, tag) = items.filter(i => has-tag(i, tag))
 
+// Most recent first: by end date (Present sorts first), then by start date.
+#let by-recency(items) = items.sorted(key: i => {
+  let end = i.at("end", default: none)
+  (if end == none { "9999" } else { end }) + "|" + i.start
+}).rev()
+
 // --- dates -------------------------------------------------------------------
 
 #let months = (

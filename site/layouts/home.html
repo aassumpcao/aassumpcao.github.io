@@ -90,7 +90,7 @@
   <nav class="side-nav" aria-label="Sections">
     <a href="#about"><span class="dot">.</span>about</a>
     <a href="#experience"><span class="dot">.</span>experience</a>
-    <a href="#consulting"><span class="dot">.</span>consulting</a>
+    <a href="#independent-research"><span class="dot">.</span>independent research</a>
     <a href="#publications"><span class="dot">.</span>publications</a>
     <a href="#software"><span class="dot">.</span>software</a>
     <a href="#talks"><span class="dot">.</span>talks &amp; awards</a>
@@ -132,7 +132,10 @@
 <section id="experience">
   <header class="section-head"><h2><span class="dot">.</span>experience</h2></header>
   <ol class="timeline">
-  {{ range $cv.work }}{{ if or (not .tags) (in .tags "web") }}
+  {{/* Most recent first: by end date (Present sorts first), then by start date. */}}
+  {{ $work := slice }}
+  {{ range $cv.work }}{{ $work = $work | append (merge . (dict "sortkey" (printf "%s|%s" (.end | default "9999") .start))) }}{{ end }}
+  {{ range sort $work "sortkey" "desc" }}{{ if or (not .tags) (in .tags "web") }}
     <li class="tl-item{{ if not .end }} is-current{{ end }}">
       <div class="tl-when">{{ partial "period.html" (dict "start" .start "end" .end) }}</div>
       <div class="tl-body">
@@ -149,8 +152,8 @@
   </ol>
 </section>
 
-<section id="consulting">
-  <header class="section-head"><h2><span class="dot">.</span>consulting</h2></header>
+<section id="independent-research">
+  <header class="section-head"><h2><span class="dot">.</span>independent research</h2></header>
   <div class="grid-2">
   {{ range $cv.consulting }}
     <article class="card">

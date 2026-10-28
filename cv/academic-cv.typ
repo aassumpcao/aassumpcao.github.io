@@ -57,7 +57,7 @@
 )))
 
 #section(label("positions"))
-#entries(only(data.work, "cv").map(w => (
+#entries(by-recency(only(data.work, "cv")).map(w => (
   year-period(w.start, w.end),
   {
     strong(org(w))
