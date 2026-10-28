@@ -1,0 +1,17 @@
+{{- /* (dict "start" "2022-09" "end" nil) → "Sep 2022 – Present" */ -}}
+{{- $months := slice "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec" -}}
+{{- $parts := slice -}}
+{{- range slice .start .end -}}
+  {{- if not . -}}
+    {{- $parts = $parts | append "Present" -}}
+  {{- else -}}
+    {{- $p := split (string .) "-" -}}
+    {{- if eq (len $p) 1 -}}
+      {{- $parts = $parts | append (index $p 0) -}}
+    {{- else -}}
+      {{- $parts = $parts | append (printf "%s %s" (index $months (sub (int (strings.TrimLeft "0" (index $p 1))) 1)) (index $p 0)) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $out := delimit (uniq $parts) " – " -}}
+{{- return $out -}}

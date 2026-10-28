@@ -1,0 +1,265 @@
+{{- $cv := hugo.Data.cv -}}
+{{- $b := $cv.basics -}}
+{{- /* Website shows items tagged "web" or untagged. */ -}}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ $b.name }}, {{ $b.credential }}</title>
+  <meta name="description" content="{{ partial "t.html" $b.label }}. {{ $b.tagline }}.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  {{ with resources.Get "style.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">{{ end }}
+  <script>
+    // Theme follows the sun: dark after sunset, light after sunrise, at the
+    // visitor's location estimated from their time zone (no permission needed).
+    // A manual toggle overrides it until the next sunrise or sunset; ?theme= forces one.
+    const sun = (() => {
+      // Coordinates for common time zones; anything else is estimated from the UTC offset.
+      const zones = {
+        "America/New_York": [40.7, -74], "America/Chicago": [41.9, -87.6], "America/Denver": [39.7, -105], "America/Phoenix": [33.4, -112.1],
+        "America/Los_Angeles": [34, -118.2], "America/Anchorage": [61.2, -149.9], "Pacific/Honolulu": [21.3, -157.9], "America/Toronto": [43.7, -79.4],
+        "America/Vancouver": [49.3, -123.1], "America/Mexico_City": [19.4, -99.1], "America/Bogota": [4.7, -74.1], "America/Lima": [-12, -77],
+        "America/Santiago": [-33.4, -70.7], "America/Argentina/Buenos_Aires": [-34.6, -58.4], "America/Sao_Paulo": [-23.5, -46.6],
+        "America/Fortaleza": [-3.7, -38.5], "America/Recife": [-8, -34.9], "America/Bahia": [-13, -38.5], "America/Belem": [-1.5, -48.5],
+        "America/Manaus": [-3.1, -60], "America/Cuiaba": [-15.6, -56.1], "Europe/London": [51.5, -0.1], "Europe/Dublin": [53.3, -6.3],
+        "Europe/Lisbon": [38.7, -9.1], "Europe/Madrid": [40.4, -3.7], "Europe/Paris": [48.9, 2.4], "Europe/Brussels": [50.8, 4.4],
+        "Europe/Amsterdam": [52.4, 4.9], "Europe/Berlin": [52.5, 13.4], "Europe/Zurich": [47.4, 8.5], "Europe/Rome": [41.9, 12.5],
+        "Europe/Stockholm": [59.3, 18.1], "Europe/Athens": [38, 23.7], "Europe/Istanbul": [41, 29], "Europe/Moscow": [55.8, 37.6],
+        "Africa/Lagos": [6.5, 3.4], "Africa/Cairo": [30, 31.2], "Africa/Nairobi": [-1.3, 36.8], "Africa/Johannesburg": [-26.2, 28],
+        "Asia/Dubai": [25.2, 55.3], "Asia/Kolkata": [22.6, 88.4], "Asia/Singapore": [1.35, 103.8], "Asia/Shanghai": [31.2, 121.5],
+        "Asia/Hong_Kong": [22.3, 114.2], "Asia/Seoul": [37.6, 127], "Asia/Tokyo": [35.7, 139.7], "Australia/Sydney": [-33.9, 151.2],
+        "Australia/Melbourne": [-37.8, 145], "Australia/Perth": [-31.95, 115.9], "Pacific/Auckland": [-36.8, 174.8],
+      };
+      const y = new Date().getFullYear();
+      const jan = new Date(y, 0, 1).getTimezoneOffset(), jul = new Date(y, 6, 1).getTimezoneOffset();
+      let zone; try { zone = zones[Intl.DateTimeFormat().resolvedOptions().timeZone]; } catch (e) {}
+      const [lat, lng] = zone || [
+        jan === jul ? 15 : jul < jan ? 40 : -35,            // DST in July → north; in January → south; none → tropics
+        -Math.max(jan, jul) / 4,                            // standard UTC offset (minutes) → degrees
+      ];
+      const rad = Math.PI / 180;
+      function times(d) {                                   // NOAA approximation → [sunrise, sunset]
+        const base = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
+        const g = 2 * Math.PI / 365 * ((base - Date.UTC(d.getFullYear(), 0, 1)) / 864e5);
+        const eqt = 229.18 * (0.000075 + 0.001868 * Math.cos(g) - 0.032077 * Math.sin(g) - 0.014615 * Math.cos(2 * g) - 0.040849 * Math.sin(2 * g));
+        const decl = 0.006918 - 0.399912 * Math.cos(g) + 0.070257 * Math.sin(g) - 0.006758 * Math.cos(2 * g) + 0.000907 * Math.sin(2 * g) - 0.002697 * Math.cos(3 * g) + 0.00148 * Math.sin(3 * g);
+        const cosH = (Math.cos(90.833 * rad) - Math.sin(lat * rad) * Math.sin(decl)) / (Math.cos(lat * rad) * Math.cos(decl));
+        const h = Math.acos(Math.max(-1, Math.min(1, cosH))) / rad;
+        const noon = 720 - 4 * lng - eqt;                   // solar noon, minutes after UTC midnight
+        return [new Date(base + (noon - 4 * h) * 6e4), new Date(base + (noon + 4 * h) * 6e4)];
+      }
+      return {
+        theme(t = new Date()) { const [rise, set] = times(t); return t >= rise && t < set ? "light" : "dark"; },
+        next(t = new Date()) {
+          const [rise, set] = times(t);
+          if (t < rise) return rise;
+          if (t < set) return set;
+          const tomorrow = new Date(t); tomorrow.setDate(t.getDate() + 1); return times(tomorrow)[0];
+        },
+      };
+    })();
+    function applyTheme() {
+      const forced = new URLSearchParams(location.search).get("theme");
+      let theme = forced || sun.theme();
+      if (!forced) try {
+        const saved = JSON.parse(localStorage.getItem("theme-override"));
+        if (saved && Date.now() < saved.until) theme = saved.theme;
+      } catch (e) {}
+      document.documentElement.dataset.theme = theme;
+    }
+    applyTheme();
+    setInterval(applyTheme, 60e3);
+  </script>
+</head>
+<body>
+<div class="backdrop" aria-hidden="true"></div>
+<div class="blend" aria-hidden="true"></div>
+
+<aside class="sidebar">
+  <div class="side-id">
+    <img class="avatar" src="images/headshot.jpg" alt="Portrait of {{ $b.name }}" width="544" height="704">
+    <div>
+      <p class="side-name">{{ $b.name }}<span class="cred">, {{ $b.credential }}</span></p>
+      <p class="side-title">{{ partial "t.html" $b.label }}</p>
+    </div>
+  </div>
+
+  <nav class="side-nav" aria-label="Sections">
+    <a href="#about"><span class="dot">.</span>about</a>
+    <a href="#experience"><span class="dot">.</span>experience</a>
+    <a href="#consulting"><span class="dot">.</span>consulting</a>
+    <a href="#publications"><span class="dot">.</span>publications</a>
+    <a href="#software"><span class="dot">.</span>software</a>
+    <a href="#talks"><span class="dot">.</span>talks &amp; awards</a>
+    <a href="#education"><span class="dot">.</span>education</a>
+  </nav>
+
+  <div class="side-actions">
+    <a class="btn btn-light" href="files/assumpcao-cv.pdf" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>Academic CV
+    </a>
+    <a class="btn btn-outline" href="files/assumpcao-resume.pdf" target="_blank" rel="noopener">Resume</a>
+  </div>
+
+  <div class="side-foot">
+    <span class="socials">
+      <a href="mailto:{{ $b.email }}" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></a>
+      {{ range $b.profiles }}
+      <a href="{{ .url }}" aria-label="{{ .network }}">
+        {{ if eq .network "LinkedIn" }}<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.1M12 17v-6.5M12 13.2c0-1.6 1-2.7 2.4-2.7S16.5 11.4 16.5 13v4"/></svg>
+        {{ else }}<svg viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>{{ end }}
+      </a>
+      {{ end }}
+    </span>
+    <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+    </button>
+  </div>
+</aside>
+
+<main class="main">
+
+<section id="about">
+  <header class="section-head"><h2><span class="dot">.</span>about</h2></header>
+  <p class="tagline">{{ $b.tagline }}.</p>
+  <p class="summary">{{ partial "t.html" $b.summary }}</p>
+</section>
+
+<section id="experience">
+  <header class="section-head"><h2><span class="dot">.</span>experience</h2></header>
+  <ol class="timeline">
+  {{ range $cv.work }}{{ if or (not .tags) (in .tags "web") }}
+    <li class="tl-item{{ if not .end }} is-current{{ end }}">
+      <div class="tl-when">{{ partial "period.html" (dict "start" .start "end" .end) }}</div>
+      <div class="tl-body">
+        <h3>{{ if .url }}<a href="{{ .url }}">{{ .organization }}</a>{{ else }}{{ .organization }}{{ end }}</h3>
+        {{ $multi := gt (len .positions) 1 }}
+        <div class="roles">
+        {{ range .positions }}<span class="role">{{ partial "t.html" .title }}{{ if $multi }} <span class="role-dates">{{ partial "period.html" (dict "start" .start "end" .end) }}</span>{{ end }}</span>{{ end }}
+        </div>
+        {{ with .summary }}<p>{{ partial "t.html" . }}</p>{{ end }}
+        {{ with .highlights }}<ul>{{ range . }}{{ if or (not .tags) (in .tags "web") }}<li>{{ partial "t.html" .text }}</li>{{ end }}{{ end }}</ul>{{ end }}
+      </div>
+    </li>
+  {{ end }}{{ end }}
+  </ol>
+</section>
+
+<section id="consulting">
+  <header class="section-head"><h2><span class="dot">.</span>consulting</h2></header>
+  <div class="grid-2">
+  {{ range $cv.consulting }}
+    <article class="card">
+      <p class="meta">{{ partial "period.html" (dict "start" .start "end" .end) }}</p>
+      <h3>{{ partial "t.html" .client }}</h3>
+      <p>{{ partial "t.html" .description }}</p>
+      <p class="links">{{ range .links }}<a href="{{ .url }}">{{ .label }} <span aria-hidden="true">↗</span></a>{{ end }}</p>
+    </article>
+  {{ end }}
+  </div>
+</section>
+
+<section id="publications">
+  <header class="section-head"><h2><span class="dot">.</span>publications</h2></header>
+  <ul class="pubs">
+  {{ range $cv.publications }}
+    <li class="card pub">
+      <span class="year">{{ .year }}</span>
+      <div>
+        <h3>{{ if .doi }}<a href="https://doi.org/{{ .doi }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3>
+        <p class="authors">{{ range $i, $a := .authors }}{{ if $i }}, {{ end }}{{ if hasPrefix $a "Andre Assump" }}<strong>{{ $a }}</strong>{{ else }}{{ $a }}{{ end }}{{ end }}</p>
+        <p class="venue"><span class="chip">{{ .venue }}</span>{{ with .doi }}<a class="doi" href="https://doi.org/{{ . }}">DOI ↗</a>{{ end }}</p>
+      </div>
+    </li>
+  {{ end }}
+  </ul>
+</section>
+
+<section id="software">
+  <header class="section-head"><h2><span class="dot">.</span>software</h2></header>
+  <div class="grid-2">
+  {{ range $cv.software }}
+    <a class="card card-link" href="{{ .url }}">
+      <span class="chip">{{ .language }}</span>
+      <h3 class="code">{{ .name }}</h3>
+      <p>{{ .description }}</p>
+      <span class="more">View on GitHub →</span>
+    </a>
+  {{ end }}
+  </div>
+</section>
+
+<section id="talks">
+  <header class="section-head"><h2><span class="dot">.</span>talks &amp; awards</h2></header>
+  <div class="grid-2 cols-lists">
+    <div class="card">
+      <h3 class="list-title">Recent talks</h3>
+      <ul class="list">
+      {{ range first 8 $cv.presentations }}<li><span class="year">{{ .year }}</span>{{ .event }}</li>{{ end }}
+      </ul>
+      <p class="note">Full list of {{ len $cv.presentations }} talks in the <a href="files/assumpcao-cv.pdf" target="_blank" rel="noopener">CV</a>.</p>
+    </div>
+    <div class="card">
+      <h3 class="list-title">Awards &amp; grants</h3>
+      <ul class="list">
+      {{ range $cv.awards }}<li><span class="year">{{ .year }}</span>{{ .title }}</li>{{ end }}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <header class="section-head"><h2><span class="dot">.</span>education</h2></header>
+  <div class="grid-4">
+  {{ range $cv.education }}{{ if or (not .tags) (in .tags "web") }}
+    <div class="card edu">
+      <p class="meta">{{ .end }}</p>
+      <h3>{{ partial "t.html" .studyType }}</h3>
+      <p class="field">{{ partial "t.html" .area }}</p>
+      <p class="inst">{{ partial "t.html" .institution }}</p>
+    </div>
+  {{ end }}{{ end }}
+  </div>
+</section>
+
+<section class="contact">
+  <div class="contact-inner">
+    <div>
+      <h2>Let's talk data and courts.</h2>
+      <p>Open to collaborations, speaking invitations, and research partnerships.</p>
+    </div>
+    <a class="btn btn-light" href="mailto:{{ $b.email }}">{{ $b.email }}</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>© {{ now.Year }} {{ $b.name }}</span>
+  <span>Last updated {{ partial "period.html" (dict "start" $cv.meta.lastUpdated "end" $cv.meta.lastUpdated) }}</span>
+</footer>
+
+</main>
+
+<script>
+  // Theme toggle: flips the theme until the next sunrise/sunset, then the sun takes over again.
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    const theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem("theme-override", JSON.stringify({ theme, until: sun.next().getTime() })); } catch (e) {}
+  });
+
+  // Highlight the sidebar link for the section in view.
+  const links = new Map([...document.querySelectorAll(".side-nav a")].map(a => [a.hash.slice(1), a]));
+  const observer = new IntersectionObserver(entries => {
+    for (const e of entries) if (e.isIntersecting) {
+      links.forEach(a => a.classList.remove("active"));
+      links.get(e.target.id)?.classList.add("active");
+    }
+  }, { rootMargin: "-40% 0px -55% 0px" });
+  links.forEach((_, id) => { const s = document.getElementById(id); if (s) observer.observe(s); });
+</script>
+</body>
+</html>

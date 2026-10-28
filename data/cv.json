@@ -1,0 +1,374 @@
+{
+  "_conventions": {
+    "text": "Any text field may be a plain string or an object {\"en\": ..., \"pt\": ...}. Missing languages fall back to English. Proper nouns are never translated: non-Brazilian names stay in English, Brazilian names stay in Portuguese.",
+    "dates": "YYYY-MM or YYYY. \"end\": null means Present.",
+    "tags": "Controls where an item appears: \"resume\" (professional resume), \"cv\" (academic CV), \"web\" (website). Items without tags appear everywhere.",
+    "private": "Phone and other private fields live in data/private.json (gitignored) and are only merged into local PDF builds."
+  },
+
+  "meta": {
+    "lastUpdated": "2026-10"
+  },
+
+  "basics": {
+    "name": "Andre Assumpcao",
+    "credential": "Ph.D.",
+    "label": {
+      "en": "Chief Data Strategist, National Center for State Courts (NCSC)",
+      "pt": "Estrategista-Chefe de Dados, National Center for State Courts (NCSC)"
+    },
+    "tagline": "Supporting courts in their data journey",
+    "email": "andre.assumpcao@gmail.com",
+    "url": "https://aassumpcao.github.io",
+    "location": "Fuquay-Varina, North Carolina, United States",
+    "profiles": [
+      { "network": "LinkedIn", "username": "aassumpcao", "url": "https://www.linkedin.com/in/aassumpcao" },
+      { "network": "GitHub", "username": "aassumpcao", "url": "https://github.com/aassumpcao" }
+    ],
+    "summary": {
+      "en": "I am the Chief Data Strategist at the National Center for State Courts (NCSC), where I contribute new data science tools (data dashboards, database management, predictive and causal inference) to the court community and NCSC's core products, and support courts in developing their AI and data strategies. Prior to the NCSC, I held research positions in government and think tanks, such as UNC's Criminal Justice Innovation Lab, the Center for International Development at the Harvard Kennedy School, the U.K. Foreign and Commonwealth Office, the Brookings Institution, and the Center of Politics and Public Economics (CEPESP-FGV)."
+    }
+  },
+
+  "education": [
+    {
+      "studyType": { "en": "Ph.D.", "pt": "Doutorado" },
+      "area": { "en": "Public Policy", "pt": "Políticas Públicas" },
+      "institution": "The University of North Carolina at Chapel Hill",
+      "start": "2015",
+      "end": "2020"
+    },
+    {
+      "studyType": { "en": "M.A.", "pt": "Mestrado" },
+      "area": { "en": "Public Policy", "pt": "Políticas Públicas" },
+      "institution": "The University of North Carolina at Chapel Hill",
+      "start": "2015",
+      "end": "2019"
+    },
+    {
+      "studyType": "M.P.P.",
+      "area": { "en": "Public Economics", "pt": "Economia Pública" },
+      "institution": { "en": "Getúlio Vargas Foundation", "pt": "Fundação Getúlio Vargas" },
+      "start": "2010",
+      "end": "2012"
+    },
+    {
+      "studyType": { "en": "B.A.", "pt": "Bacharelado" },
+      "area": { "en": "Economics", "pt": "Economia" },
+      "institution": { "en": "The State University of Campinas", "pt": "Universidade Estadual de Campinas" },
+      "start": "2004",
+      "end": "2008"
+    },
+    {
+      "studyType": { "en": "Visiting student", "pt": "Intercâmbio" },
+      "area": { "en": "Economics", "pt": "Economia" },
+      "institution": "The University of Texas at Austin",
+      "start": "2007",
+      "end": "2007",
+      "tags": ["cv"]
+    }
+  ],
+
+  "work": [
+    {
+      "organization": "National Center for State Courts (NCSC)",
+      "url": "https://www.ncsc.org",
+      "location": "Williamsburg, Virginia (remote)",
+      "category": "main",
+      "start": "2022-09",
+      "end": null,
+      "positions": [
+        { "title": { "en": "Chief Data Strategist", "pt": "Estrategista-Chefe de Dados" }, "start": "2025-11", "end": null },
+        { "title": { "en": "Data Scientist", "pt": "Cientista de Dados" }, "start": "2022-09", "end": "2025-10" }
+      ],
+      "summary": "Support courts and the NCSC in developing their AI and data strategies, including partnerships with other branches of government, private companies, and non-profits.",
+      "highlights": [
+        { "text": "Created more than three (3+) apps that integrate AI large language model solutions into data extraction tasks across the NCSC." },
+        { "text": "Created the NCSC Data Dives – an ongoing publication series covering topics around data collection, analysis, and presentation for state courts." },
+        { "text": "Led three (3) workshops (both internal and external) on potential uses of AI in state courts." },
+        { "text": "Led data collection and processing tasks for two (2) large federally funded state court criminal data projects." },
+        { "text": "Set up the infrastructure and implemented the NCSC's first large data warehouse." },
+        { "text": "Supported the development of data science skills across various teams at the NCSC with R and LLM training." }
+      ]
+    },
+    {
+      "organization": "Criminal Justice Innovation Lab (CJIL), UNC School of Government",
+      "location": "Chapel Hill, North Carolina",
+      "category": "main",
+      "start": "2021-07",
+      "end": "2022-09",
+      "positions": [
+        { "title": { "en": "Post-Doctoral Fellow", "pt": "Pesquisador de Pós-Doutorado" }, "start": "2021-07", "end": "2022-09" }
+      ],
+      "highlights": [
+        { "text": "Spearheaded the development of CJIL's Measuring Justice Data Dashboard with over thirty-five (35) criminal justice metrics across the entire state in under six (6) months." },
+        { "text": "Optimized CJIL's data analysis pipelines through the implementation of R and Python programs, reducing the time necessary to process state criminal case data from two (2) weeks to forty-eight (48) hours." }
+      ]
+    },
+    {
+      "organization": "Growth Lab, Center for International Development, Harvard University",
+      "location": "Cambridge, Massachusetts",
+      "category": "main",
+      "start": "2020-06",
+      "end": "2021-05",
+      "positions": [
+        { "title": { "en": "Post-Doctoral Fellow", "pt": "Pesquisador de Pós-Doutorado" }, "start": "2020-06", "end": "2021-05" }
+      ],
+      "highlights": [
+        { "text": "Co-authored paper on changes of occupational tasks and implications for computerization and the gender pay gap." },
+        { "text": "Designed an algorithm to perform extractive summarization of long documents." },
+        { "text": "Managed two survey experiments for two applied research projects with over 15,000 respondents and co-authored paper on the factors determining Colombian migration." },
+        { "text": "Designed a data dashboard to report the results of one of the survey experiments in under thirty (30) days." }
+      ]
+    },
+    {
+      "organization": "University of North Carolina at Chapel Hill",
+      "location": "Chapel Hill, North Carolina",
+      "category": "main",
+      "start": "2015-07",
+      "end": "2020-05",
+      "positions": [
+        { "title": { "en": "Graduate Research and Teaching Assistant", "pt": "Assistente de Pesquisa e Ensino" }, "start": "2015-07", "end": "2020-05" }
+      ],
+      "highlights": [
+        { "text": "Completed 5+ research projects (now submitted, under review, or accepted for publication)." },
+        { "text": "Managed 5+ advisor-led research projects using experimental research methods." },
+        { "text": "Independently taught a graduate-level course on political economy of development and an undergraduate-level course on quantitative analysis of public policy." }
+      ]
+    },
+    {
+      "organization": "United Kingdom Foreign, Commonwealth & Development Office",
+      "location": "São Paulo, Brazil",
+      "category": "main",
+      "start": "2013-04",
+      "end": "2015-07",
+      "positions": [
+        { "title": { "en": "Economics Officer", "pt": "Oficial de Economia" }, "start": "2013-04", "end": "2015-07" }
+      ],
+      "highlights": [
+        { "text": "Secured a 6x increase in funding for finance and transparency projects during tenure (£50,000 to £300,000)." },
+        { "text": "Organized 3 workshops on improving Brazil's financial sector." },
+        { "text": "Organized 5 Ministerial visits to / from the U.K. / Brazil." }
+      ]
+    },
+    {
+      "organization": "Brazilian Association of Jurimetrics (ABJ)",
+      "organizationLocal": { "pt": "Associação Brasileira de Jurimetria (ABJ)" },
+      "url": "https://abj.org.br",
+      "location": "São Paulo, Brazil",
+      "category": "other",
+      "start": "2021-01",
+      "end": null,
+      "positions": [
+        { "title": { "en": "Non-resident Affiliated Researcher", "pt": "Pesquisador Associado" }, "start": "2021-01", "end": null }
+      ],
+      "highlights": [
+        { "text": "Secured $200,000 worth of funding from national (National Council of Justice) and international organizations (Inter-American Development Bank) – equivalent to 5 years of ABJ's operational expenses." },
+        { "text": "Co-authored one paper on the landscape of tax (administrative) dispute resolution in Brazil and developed two data dashboards for external funders." }
+      ]
+    },
+    {
+      "organization": "The Brookings Institution",
+      "tags": ["cv", "web"],
+      "location": "Washington, D.C.",
+      "category": "other",
+      "start": "2016-06",
+      "end": "2016-08",
+      "positions": [
+        { "title": { "en": "Summer Research Assistant", "pt": "Assistente de Pesquisa (verão)" }, "start": "2016-06", "end": "2016-08" }
+      ],
+      "highlights": [
+        { "text": "Conducted exploratory data analyses for the Metropolitan Policy Program." },
+        { "text": "Wrote 5+ analytical pieces for the Paris Global Competitiveness report." },
+        { "text": "Wrote independent grant application on the impact of immigration on human capital in U.S. metropolitan areas." }
+      ]
+    },
+    {
+      "organization": "FECAP",
+      "tags": ["cv", "web"],
+      "location": "São Paulo, Brazil",
+      "category": "other",
+      "start": "2014-04",
+      "end": "2015-06",
+      "positions": [
+        { "title": { "en": "Lecturer", "pt": "Professor" }, "start": "2014-04", "end": "2015-06" }
+      ],
+      "highlights": [
+        { "text": "Designed and taught the IFRS Executive Education course on Financial Markets and Risks." }
+      ]
+    },
+    {
+      "organization": "Center for Politics and Economics of the Public Sector (CEPESP), FGV-EAESP",
+      "tags": ["cv", "web"],
+      "location": "São Paulo, Brazil",
+      "category": "other",
+      "start": "2011-02",
+      "end": "2014-02",
+      "positions": [
+        { "title": { "en": "Research Assistant", "pt": "Assistente de Pesquisa" }, "start": "2011-02", "end": "2014-02" }
+      ],
+      "highlights": [
+        { "text": "Managed large data collection initiative to build the most comprehensive database of federal transfers to municipalities to study public management and corruption." },
+        { "text": "Conducted statistical analysis for research paper on the governance of public health resources in Brazilian municipalities." }
+      ]
+    }
+  ],
+
+  "consulting": [
+    {
+      "client": { "en": "Brazilian Federal Court of Accounts (TCU)", "pt": "Tribunal de Contas da União (TCU)" },
+      "start": "2023-05",
+      "end": null,
+      "description": {
+        "en": "Supported the development of an AI tool that automates the analysis of legal proceedings of the court.",
+        "pt": "Apoiou o desenvolvimento de ferramenta de IA que automatiza a análise de processos jurídicos do tribunal."
+      },
+      "links": [{ "label": "neuralmind.ai/assertia", "url": "https://neuralmind.ai/assertia" }]
+    },
+    {
+      "client": "Inter-American Development Bank (IDB)",
+      "start": "2021-05",
+      "end": "2022-03",
+      "description": {
+        "en": "Analyzed Brazil's administrative tax litigation system, reviewing its effectiveness, institutional design, and key challenges across all levels of government.",
+        "pt": "Analisou o sistema de contencioso administrativo tributário do Brasil, revisando sua eficácia, desenho institucional e principais desafios em todos os níveis de governo."
+      },
+      "links": [{ "label": "abj.org.br/pesquisas/bid-tributario", "url": "https://abj.org.br/pesquisas/bid-tributario/" }]
+    },
+    {
+      "client": { "en": "Open Knowledge Foundation, Brazilian Office", "pt": "Open Knowledge Foundation (escritório no Brasil)" },
+      "start": "2020-10",
+      "end": "2021-04",
+      "description": {
+        "en": "Applied natural language processing to analyze local government gazettes in Brazil.",
+        "pt": "Aplicou processamento de linguagem natural para analisar diários oficiais de governos municipais no Brasil."
+      },
+      "links": [{ "label": "github.com/okfn-brasil/querido-diario-toolbox", "url": "https://github.com/okfn-brasil/querido-diario-toolbox" }]
+    },
+    {
+      "client": { "en": "Brazilian Association of Investigative Reporting (ABRAJI)", "pt": "Associação Brasileira de Jornalismo Investigativo (ABRAJI)" },
+      "start": "2019-10",
+      "end": "2020-10",
+      "description": {
+        "en": "Structured the data feeding ABRAJI's portal containing all lawsuits filed against Brazilian politicians since 2014.",
+        "pt": "Estruturou os dados do portal da ABRAJI contendo todos os processos judiciais movidos contra políticos brasileiros desde 2014."
+      },
+      "links": [
+        { "label": "publique-se.org.br", "url": "https://publique-se.org.br" },
+        { "label": "github.com/abraji/publique_se", "url": "https://github.com/abraji/publique_se" }
+      ]
+    }
+  ],
+
+  "publications": [
+    {
+      "type": "conference",
+      "authors": ["Juvenal Domingos Júnior", "Augusto Faria", "E. Seiti de Oliveira", "Erick de Brito", "Matheus Teotonio", "Andre Assumpcao", "Diedre Carmo", "Roberto Lotufo", "Jayr Pereira"],
+      "title": "BR-TaxQA-R: A Dataset for Question Answering with References for Brazilian Personal Income Tax Law, Including Case Law",
+      "venue": "Intelligent Systems (BRACIS 2025), Lecture Notes in Computer Science",
+      "year": "2026",
+      "pages": "208–222",
+      "doi": "10.1007/978-3-032-15987-8_14"
+    },
+    {
+      "type": "article",
+      "authors": ["Jayr Pereira", "Andre Assumpcao", "Julio Trecenti", "Luiz Airosa", "Caio Lente", "Jhonatan Cléto", "Guilherme Dobins", "Rodrigo Nogueira", "Luis Mitchell", "Roberto Lotufo"],
+      "title": "INACIA: Integrating Large Language Models in Brazilian Audit Courts: Opportunities and Challenges",
+      "venue": "Digital Government: Research and Practice",
+      "year": "2025",
+      "volume": "6",
+      "issue": "1",
+      "pages": "Article 6",
+      "doi": "10.1145/3652951"
+    },
+    {
+      "type": "article",
+      "authors": ["Leo Schmallenbach"],
+      "title": "A Journey through Time: The Story Behind 'Eight Decades of Changes in Occupational Tasks, Computerization and the Gender Pay Gap' by Ljubica Nedelkoska, Shreyas Gadgin Matha, James McNerney, Andre Assumpcao, Dario Diodato, and Frank Neffke",
+      "venue": "Industry and Innovation",
+      "year": "2024",
+      "volume": "31",
+      "issue": "4",
+      "doi": "10.1080/13662716.2024.2328005"
+    },
+    {
+      "type": "article",
+      "authors": ["Fernando Berssaneti", "Andre Assumpcao", "Oswaldo Nakao"],
+      "title": "Engineering, Procurement, and Construction (EPC): What Are the Variables That Impact the Success of the Projects Currently Running in Brazil?",
+      "venue": "Gestão & Produção",
+      "year": "2014",
+      "volume": "21",
+      "issue": "1",
+      "doi": "10.1590/S0104-530X2014005000009"
+    }
+  ],
+
+  "awards": [
+    { "year": "2024", "title": "AWS Imagine Grant Cash Award" },
+    { "year": "2023", "title": "NCSC Jeanne Ito Award for Innovation, Cooperation, Coordination and Teamwork" },
+    { "year": "2023", "title": "DRUID Best Paper Award for \"Eight Decades of Changes in Occupational Tasks, Computerization and the Gender Pay Gap\"" },
+    { "year": "2022", "title": "Brazilian Federal Court of Accounts (TCU) AI Grant" },
+    { "year": "2022", "title": "Brazilian Health Ministry AI Grant" },
+    { "year": "2018", "title": "UNC Public Policy Summer Fellowship", "tags": ["cv"] },
+    { "year": "2017, 2018, 2019", "title": "Institute for Humane Studies Research Funding", "tags": ["cv"] },
+    { "year": "2017", "title": "UNC Graduate School Summer Fellowship", "tags": ["cv"] },
+    { "year": "2015, 2016", "title": "UNC Graduate School Weiss Urban Livability Fellowship", "tags": ["cv"] },
+    { "year": "2015", "title": "UNC Nancy F. Stegman Fellowship", "tags": ["cv"] }
+  ],
+
+  "teaching": [
+    { "institution": "University of North Carolina at Chapel Hill", "course": "Political Economy of Development", "level": "Graduate", "role": "Instructor" },
+    { "institution": "University of North Carolina at Chapel Hill", "course": "Quantitative Analysis of Public Policy", "level": "Undergraduate", "role": "Instructor" },
+    { "institution": "FECAP", "course": "Financial Markets and Risks (IFRS Executive Education)", "level": "Executive education", "role": "Lecturer", "start": "2014", "end": "2015" }
+  ],
+
+  "software": [
+    { "name": "querido-diario-toolbox", "language": "Python", "description": "Python module to perform text extraction, processing, and analysis of local government gazettes in Brazil.", "url": "https://github.com/okfn-brasil/querido-diario-toolbox" },
+    { "name": "keywordextraction", "language": "Python", "description": "Python module to perform keyword extraction from any text document using TF-IDF, WordRank, and word embedding methods.", "url": "https://github.com/aassumpcao/keywordextraction" },
+    { "name": "textfind", "language": "Stata", "description": "Stata command to do descriptive analysis of keywords in text documents.", "url": "https://github.com/aassumpcao/textfind" },
+    { "name": "emailToEvent", "language": "AppleScript", "description": "AppleScript program to create iCal events from Outlook and Mail on macOS.", "url": "https://github.com/aassumpcao/emailToEvent", "tags": ["cv", "web"] }
+  ],
+
+  "presentations": [
+    { "year": "2025", "event": "Judicial Council of California – 2025 Data Summit" },
+    { "year": "2025", "event": "NCSC Court Technology Conference (CTC)" },
+    { "year": "2025", "event": "NCSC Data Specialist and Information Technologists Summit" },
+    { "year": "2024", "event": "American Society of Criminology" },
+    { "year": "2024", "event": "NCSC National eCourts Conference" },
+    { "year": "2024", "event": "Kansas Judicial Branch Judicial Education Conference" },
+    { "year": "2024", "event": "NCSC Lawyer Council April Meeting" },
+    { "year": "2024", "event": "NCSC State Courts' AI Implementer's Forum" },
+    { "year": "2023", "event": "Court Information Technology Officers Conference (CITOC)" },
+    { "year": "2023", "event": "Oregon Judicial Department Justice Campaign Leadership Summit" },
+    { "year": "2023", "event": "NCSC Court Technology Conference (CTC)" },
+    { "year": "2023", "event": "NCSC Data Specialist and Information Technologists Summit" },
+    { "year": "2023", "event": "NCSC Data Specialist Roundtable" },
+    { "year": "2021", "event": "UNC Chapel Hill School of Government Job Talk" },
+    { "year": "2021", "event": "Brazilian Association of Jurimetrics – Café Jurimétrico" },
+    { "year": "2019", "event": "Harvard Kennedy School of Government Job Talk" },
+    { "year": "2019", "event": "Conference on Empirical Legal Studies" },
+    { "year": "2019", "event": "Association for Public Policy Analysis and Management Meeting" },
+    { "year": "2019", "event": "IHS Research Colloquium" },
+    { "year": "2019", "event": "Canadian Law and Economics Association Conference" },
+    { "year": "2019", "event": "Midwest Political Science Association Meeting" },
+    { "year": "2019", "event": "PPE Society Meeting" },
+    { "year": "2019", "event": "Public Choice Society Annual Meeting" },
+    { "year": "2019", "event": "Global Conference on Transparency Research" },
+    { "year": "2019", "event": "Paraná State Bar Association" },
+    { "year": "2019", "event": "FGV-CEPESP" },
+    { "year": "2018", "event": "IHS Fall Research Colloquium" },
+    { "year": "2017", "event": "UNC Public Policy" }
+  ],
+
+  "skills": [
+    { "name": { "en": "Methods", "pt": "Métodos" }, "keywords": ["Econometrics", "Causal inference", "Predictive modeling", "Natural language processing", "Large language models"] },
+    { "name": { "en": "Programming", "pt": "Programação" }, "keywords": ["R", "Python", "Stata"] },
+    { "name": { "en": "Data infrastructure", "pt": "Infraestrutura de dados" }, "keywords": ["Data warehousing", "Data pipelines", "Dashboards", "Data governance"] }
+  ],
+
+  "languages": [
+    { "language": { "en": "Portuguese", "pt": "Português" }, "fluency": { "en": "Native", "pt": "Nativo" } },
+    { "language": { "en": "English", "pt": "Inglês" }, "fluency": { "en": "Full professional", "pt": "Fluente" } },
+    { "language": { "en": "Spanish", "pt": "Espanhol" }, "fluency": { "en": "Full professional", "pt": "Fluente" } }
+  ]
+}

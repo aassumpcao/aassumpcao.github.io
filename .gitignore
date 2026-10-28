@@ -1,0 +1,11 @@
+# Private fields (phone, etc.) — merged into local PDF builds only
+data/private.json
+
+# Build outputs
+build/
+site/public/
+site/resources/
+site/static/files/
+site/.hugo_build.lock
+
+.DS_Store

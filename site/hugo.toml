@@ -1,0 +1,10 @@
+baseURL = "https://aassumpcao.github.io/"
+locale = "en-US"
+title = "Andre Assumpcao"
+disableKinds = ["taxonomy", "term", "rss", "sitemap"]
+
+# Read the single source of truth from the repo root instead of keeping a copy.
+# Only cv.json is mounted, so data/private.json can never reach the site.
+[[module.mounts]]
+  source = "../data/cv.json"
+  target = "data/cv.json"

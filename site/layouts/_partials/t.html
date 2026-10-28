@@ -1,0 +1,4 @@
+{{- /* English text from a plain string or an {en, pt} object. */ -}}
+{{- $out := . -}}
+{{- if reflect.IsMap . }}{{ $out = index . "en" }}{{ end -}}
+{{- return $out -}}

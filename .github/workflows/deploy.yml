@@ -1,0 +1,49 @@
+# Build the public PDFs and the website from data/cv.json, then deploy to Pages.
+# data/private.json is gitignored, so CI builds never include the phone number.
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: typst-community/setup-typst@v4
+        with:
+          typst-version: "0.15.1"
+
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.169.0"
+          extended: true
+
+      - name: Build PDFs and site
+        run: make site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
